@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="597.0" prefWidth="769.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="460.0" prefWidth="704.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutX="25.0" layoutY="22.0" text="Modify Product">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="50.0" layoutY="85.0" text="ID" />
+            <Label layoutX="48.0" layoutY="117.0" text="Name" />
+            <Label layoutX="48.0" layoutY="146.0" text="Inv" />
+            <Label layoutX="48.0" layoutY="174.0" text="Price" />
+            <Label layoutX="45.0" layoutY="201.0" text="Max" />
+            <TextField fx:id="tfID" disable="true" editable="false" layoutX="88.0" layoutY="84.0" promptText="Auto Gen- Disabled" />
+            <TextField fx:id="tfName" layoutX="88.0" layoutY="116.0" />
+            <TextField fx:id="tfInv" layoutX="88.0" layoutY="145.0" />
+            <TextField fx:id="tfPriceCost" layoutX="88.0" layoutY="173.0" />
+            <TextField fx:id="tfMax" layoutX="88.0" layoutY="200.0" prefHeight="25.0" prefWidth="72.0" />
+            <Label layoutX="181.0" layoutY="204.0" text="Min" />
+            <TextField fx:id="tfMin" layoutX="212.0" layoutY="200.0" prefHeight="25.0" prefWidth="72.0" />
+            <Button fx:id="btnSave" layoutX="605.0" layoutY="558.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="Save" />
+            <Button fx:id="btnCancel" layoutX="683.0" layoutY="558.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="Cancel" />
+            <TableView fx:id="tvAvailableParts" layoutX="362.0" layoutY="42.0" prefHeight="200.0" prefWidth="393.0">
+                <columns>
+                    <TableColumn fx:id="tcAvailablePartId" editable="false" prefWidth="75.0" text="Part ID">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="id" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcAvailablePartName" prefWidth="75.0" text="Part Name">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcAvailablePartInventoryLevel" editable="false" prefWidth="105.0" text="Inventory Level">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="stock" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcAvailablePartPrice" editable="false" prefWidth="155.0" text="Price/Cost per Unit">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="price" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+            <TableView fx:id="tvAssignedParts" layoutX="362.0" layoutY="286.0" prefHeight="200.0" prefWidth="393.0">
+                <columns>
+                    <TableColumn fx:id="tcPartId" editable="false" prefWidth="75.0" text="Part ID">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="id" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcPartName" prefWidth="75.0" text="Part Name">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcPartInventoryLevel" editable="false" prefWidth="105.0" text="Inventory Level">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="stock" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcPartPrice" editable="false" prefWidth="155.0" text="Price/Cost per Unit">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="price" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+            <Button fx:id="btnAdd" layoutX="717.0" layoutY="252.0" mnemonicParsing="false" text="Add" />
+            <Button fx:id="btnRemove" layoutX="605.0" layoutY="518.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Remove Associated Part" />
+            <TextField fx:id="tfSearchPart" layoutX="587.0" layoutY="10.0" prefHeight="25.0" prefWidth="167.0" promptText="Search by Part ID or Name" />
+            <Label fx:id="lblMinMaxError" layoutX="88.0" layoutY="234.0" text="Label" visible="false" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
